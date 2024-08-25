@@ -1,4 +1,22 @@
 
+document.addEventListener('DOMContentLoaded', () =>{
+  const home_screen = document.getElementById('home_screen');
+  
+  home_screen.style.display = "block";
+  container.classList.add('model-open');
+});
+
+const play_now = document.getElementById('play_now').addEventListener("click", () =>{
+  home_screen.style.display = "none";
+  ClosePopUp();
+});
+
+//home_screen.style.display = "block";
+//container.classList.add('model-open');
+
+
+const container = document.getElementById('container')
+
 const cells = document.querySelectorAll('.cell');
 
 let playerO = '0';
@@ -40,12 +58,14 @@ function handleCellClick(e) {
     }
 
     if (checkWinner()) {
-        alert(`${currentPlayer} has won!`);
+        //alert(`${currentPlayer} has won!`);
+        OpenPopUp();
         return;
     }
 
     if (isDraw()) {
-        alert('It\'s a draw!');
+        //alert('It\'s a draw!');
+        OpenPopUp();
         return;
     }
 
@@ -84,14 +104,26 @@ function isDraw() {
 
 
 
+const popup = document.getElementById('game_over');
+
+const quit_game = document.getElementById('quit').addEventListener("click", () =>{
+  
+  home_screen.style.display = "block";
+  
+  ClosePopUp();
+  container.classList.add('model-open');
+});
+
+function ClosePopUp() {
+  popup.style.display = "none"
+  
+  container.classList.remove('model-open');
+}
+
+function OpenPopUp() {
+  popup.style.display = "block"
+  
+  container.classList.add('model-open');
+}
 
 
-
-// const cells = document.querySelectorAll('.cell')
-// 
-// cells.forEach((cell) => 
-//   cell.addEventListener("click", () => {
-//     cell.style.backgroundColor= 'red';
-// 
-//   });
-// });

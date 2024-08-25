@@ -8,7 +8,23 @@
   </head>
   <body>
     <div id="container">
-      <div class="grid">
+      <div id="title">
+        <h1>Tic-tac-toe</h1>
+      </div>
+        <!--        -->
+      <div id="dashboard">
+        <div class="player_score">
+          <div class="playerX player">
+            <h3>player X</h3> <div class="Xscore">0</div>
+          </div>
+          <div class="playerO player">
+            <h3>player O</h3> <div class="Oscore">0</div>
+          </div>
+        </div>
+      </div>
+<!--        -->
+      <div id="board">
+        <div class="grid">
         <div class="cell" data-index="0"></div>
         <div class="cell" data-index="1"></div>
         <div class="cell" data-index="2"></div>
@@ -18,6 +34,28 @@
         <div class="cell" data-index="6"></div>
         <div class="cell" data-index="7"></div>
         <div class="cell" data-index="8"></div>
+      </div>
+      </div>
+    </div>
+<!--      -->
+    <div id="game_over" class="pop-up">
+      <h2>Game Over</h2>
+      <h3>player X WON </h3>
+      
+      <div class="game_over_buttons">
+        <button id="" class="btn">Replay</button>
+        <button id="quit" class="btn">Quit Game</button>
+      </div>
+      
+    </div>
+    
+    <div id="home_screen" class="pop-up">
+      <h2>Tic Tac Toe</h2>
+      
+      <div class="home_screen_buttons">
+        <button id="play_now" class="btn">Play Now!</button>
+        <button id="play_with_friends"class="btn">Play with Friends</button>
+        <button id="settings" class="btn"> Settings </button>
       </div>
     </div>
     

@@ -1,6 +1,10 @@
 :root{
   --cell-width: 100px;
   --cell-height: 100px;
+  --bg-color: #f9f9f9;
+  --primary-color: rgb(246,245,245);
+  --player-color: rgb(255,27,27);
+  --button-color: rgb(69,68,68);
 }
 
 *{
@@ -8,35 +12,163 @@
   margin: 0;
   padding: 0;
 }
-
 #container{
-  background-color: red;
+  background-color: var(--bg-color); 
+/* background-color: red; */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
 }
 
+#dashboard{
+  background-color: var(--primary-color);
+  box-shadow: 12px 12px 12px 
+  rgba(0,0,0,0.1),
+  -12px -10px 10px white;
+  border-radius: 5px;
+  width: 20rem;
+  height: 7rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+}
+
+.player_score{
+  width: 300px;
+}
+
+.player{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: .5rem 0;
+  box-shadow: 12px 12px 12px rgba(0,0,0,0.1) inset,
+  -12px -10px 10px white inset; 
+  padding: .5rem;
+}
+
+#board{
+  background-color: var(--primary-color);
+  box-shadow: 12px 12px 12px 
+  rgba(0,0,0,0.1),
+  -12px -10px 10px white;
+  border-radius: 5px;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .grid{
-  background-color: blue;
-  /* width: calc(var(--cell-width) * 4);
-  height: calc(var(--cell-height) * 4); */
+  background-color: var(--bg-color);
   display: grid;
+  gap: 5px;
   grid-template-columns: repeat(3, var(--cell-width));
   grid-template-rows: repeat(3, var(--cell-height));
-  gap: 5px;
 }
 
 .cell{
-  background-color: brown;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 12px 12px 12px rgba(0,0,0,0.1) inset,
+  -12px -10px 10px white inset; 
 }
 
 .player_X,
 .player_O{
-  color: white;
+  color: var(--player-color);
   font-size: 3rem;
+}
+
+
+.pop-up{
+  background-color: rgb(186,173,173);
+  position: fixed;
+  border-radius: 15px;
+  z-index: 100;
+  left: 50%; /* Start from the middle of the screen horizontally */
+  top: 50%; /* Start from the middle of the screen vertically */
+  width: 300px;
+  height: 300px;
+  overflow: auto;
+  transform: translate(-50%, -50%); /* Move the element back by half of its width and height to center it */
+}
+
+#game_over{
+  display: none;
+}
+
+#game_over h2{
+  text-align: center;
+  padding-top: .5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+#game_over h3{
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 4rem;
+}
+
+.game_over_buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  margin-top: 3rem;
+}
+
+.home_screen_buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 150px;
+  margin-top: 4rem;
+}
+
+.btn{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  margin: 0 .5rem;
+  background-color: var(--button-color);
+  color: white;
+}
+
+#home_screen{
+  display: none;
+}
+
+#home_screen h2{
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+#play_now,
+#play_with_friends,
+#settings{
+  width: 150px;
+}
+
+.model-open{
+  filter: blur(5px);
+  pointer-events: none;
 }
