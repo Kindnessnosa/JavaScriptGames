@@ -108,7 +108,9 @@
   display: none;
 }
 
-#game_over h2{
+/* #game_over */
+
+h2{
   text-align: center;
   padding-top: .5rem;
   color: white;
@@ -131,7 +133,8 @@
   margin-top: 3rem;
 }
 
-.home_screen_buttons{
+.home_screen_buttons,
+.select_mode_buttons{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,4 +174,33 @@
 .model-open{
   filter: blur(5px);
   pointer-events: none;
+}
+
+#game_options{
+  display: none;
+}
+
+#timer_model{
+  display: block;
+}
+
+#round_roubin_model{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#round_roubin_model p{
+  text-align: center;
+  max-width: 13rem;
+}
+
+#rounds_form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 7rem;
+  width: 15rem;
 }

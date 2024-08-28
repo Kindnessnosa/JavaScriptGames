@@ -11,11 +11,8 @@ const play_now = document.getElementById('play_now').addEventListener("click", (
   ClosePopUp();
 });
 
-//home_screen.style.display = "block";
-//container.classList.add('model-open');
 
-
-const container = document.getElementById('container')
+const container = document.getElementById('container');
 
 const cells = document.querySelectorAll('.cell');
 
@@ -58,14 +55,12 @@ function handleCellClick(e) {
     }
 
     if (checkWinner()) {
-        //alert(`${currentPlayer} has won!`);
-        OpenPopUp();
+        GameOver();
         return;
     }
 
     if (isDraw()) {
-        //alert('It\'s a draw!');
-        OpenPopUp();
+        Draw();
         return;
     }
 
@@ -102,26 +97,68 @@ function isDraw() {
 
 
 
+const game_over = document.getElementById('game_over');
 
 
-const popup = document.getElementById('game_over');
+function GameOver() {
+  
+  const winner = document.getElementById('winner').innerHTML = `
+    <h3> player ${currentPlayer} has won!</h3>
+  `
+  
+  game_over.style.display = "block";
+  
+  container.classList.add('model-open');
+}
+
+function Draw() {
+  
+  const winner = document.getElementById('winner').innerHTML = `
+    <h3> It's a Draw </h3>
+  `
+  
+  game_over.style.display = "block";
+  
+  container.classList.add('model-open');
+}
+
+
+function SetNumberOfRounds(rounds) {
+  
+}
+
+
+
+
+const popup = document.getElementsByClassName('pop-up');
 
 const quit_game = document.getElementById('quit').addEventListener("click", () =>{
   
   home_screen.style.display = "block";
   
   ClosePopUp();
+  OpenPopUp();
   container.classList.add('model-open');
 });
 
 function ClosePopUp() {
-  popup.style.display = "none"
+  
+  for (let i = 0; i < popup.length; i++) {
+    
+    popup[i].style.display = "none";
+    
+  }
   
   container.classList.remove('model-open');
 }
 
 function OpenPopUp() {
-  popup.style.display = "block"
+  
+  for (let i = 0; i < popup.length; i++) {
+    
+    popup[i].style.display = "block";
+    
+  }
   
   container.classList.add('model-open');
 }

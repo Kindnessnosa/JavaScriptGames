@@ -40,18 +40,15 @@
 <!--      -->
     <div id="game_over" class="pop-up">
       <h2>Game Over</h2>
-      <h3>player X WON </h3>
-      
+      <div id="winner"></div>
       <div class="game_over_buttons">
-        <button id="" class="btn">Replay</button>
+        <button id="replay" class="btn">Replay</button>
         <button id="quit" class="btn">Quit Game</button>
       </div>
-      
     </div>
     
     <div id="home_screen" class="pop-up">
       <h2>Tic Tac Toe</h2>
-      
       <div class="home_screen_buttons">
         <button id="play_now" class="btn">Play Now!</button>
         <button id="play_with_friends"class="btn">Play with Friends</button>
@@ -59,6 +56,50 @@
       </div>
     </div>
     
-    <script src="Tic-tac-toe.js" type="text/javascript" charset="utf-8"></script>
+    <div id="game_options" class="pop-up">
+      <h2> Select Mode </h2>
+      <div class="select_mode_buttons">
+        <button id="" class="btn">Round Robin</button>
+        <button id="" class="btn">Timer</button>
+      </div>
+    </div>
+    
+    <div id="round_roubin_model" class="pop-up">
+      <h2>Round Robin</h2>
+      <p> The player with the highest points at the end of the tournament wins the game </p>
+      <div id="rounds_form">
+        <div> 
+        <label for="options">select rounds</label>
+        <select name="options" id="">
+        <option value="3"> 3 </option>
+        <option value="5"> 5 </option>
+        <option value="7"> 7 </option>
+        <option value="9"> 9 </option>
+      </select>
+      </div>
+      <button id="" class="btn">play</button>
+      <button id="" class="btn">back</button>
+      </div>
+    </div>
+    
+    <div id="timer_model" class="pop-up">
+      <h2>Timed </h2>
+      <p> At the end of the timer the player with the highest points wins </p>
+      <div id="timer_form">
+        <div> 
+        <label for="options">select rounds</label>
+        <select name="options" id="">
+        <option value="3"> 3min </option>
+        <option value="5"> 5min </option>
+        <option value="7"> 7min </option>
+        <option value="10"> 10min </option>
+      </select>
+      </div>
+      <button id="" class="btn">play</button>
+      <button id="" class="btn">back</button>
+      </div>
+    </div>
+    
+    <script src="Tic-tac-toe.jss" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
